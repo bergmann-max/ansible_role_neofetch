@@ -1,7 +1,15 @@
 ---
-# roles/ansible_role_template/tasks/main.yml
+# roles/ansible_role_neofetch/tasks/main.yml
 
-- name: Update repositories cache and install "foo" package
+- name: Install neofetch
   ansible.builtin.apt:
-    name: foo
-    update_cache: yes
+    name: neofetch
+    update_cache: true
+
+- name: Deploy neofetch login script from role files
+  ansible.builtin.copy:
+    src: neofetch.sh
+    dest: "{{ ansible_role_neofetch_script_location }}"
+    owner: root
+    group: root
+    mode: u=rwx,g=rx,o=rx
