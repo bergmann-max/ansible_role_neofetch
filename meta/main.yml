@@ -3,7 +3,7 @@
 
 galaxy_info:
   author: Max Bergmann
-  description: Configure system time synchronization via systemd-timesyncd with a custom NTP server.
+  description: Install and configure neofetch to display system info at login on Ubuntu systems.
   license: Unlicense
   min_ansible_version: "2.9"
   platforms:
@@ -11,7 +11,6 @@ galaxy_info:
       versions:
         - all
   galaxy_tags:
-    - ntp
-    - timesync
-    - time
+    - neofetch
+    - motd
 dependencies: []

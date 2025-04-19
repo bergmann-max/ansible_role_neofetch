@@ -9,7 +9,7 @@
 - name: Deploy neofetch login script from role files
   ansible.builtin.copy:
     src: neofetch.sh
-    dest: "{{ ansible_role_neofetch_script_location }}"
+    dest: "/etc/profile.d/neofetch.sh"
     owner: root
     group: root
     mode: u=rwx,g=rx,o=rx

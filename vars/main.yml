@@ -1,4 +1,0 @@
----
-# roles/ansible_role_neofetch/vars/main.yml
-
-ansible_role_neofetch_script_location: "/etc/profile.d/neofetch.sh"
