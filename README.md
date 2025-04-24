@@ -12,6 +12,7 @@ This Ansible role installs **neofetch** on Ubuntu systems and configures it to d
 ### Features:
 - Installs the `neofetch` package from the official repositories
 - Deploys a login script to `/etc/profile.d/neofetch.sh`
+- Deploys a global Neofetch configuration (`config.conf`) to `/etc/neofetch/` for consistent appearance across all users
 
 ## Role Variables
 
@@ -34,6 +35,7 @@ This role ensures:
 - `neofetch` is installed and available system-wide
 - `/etc/profile.d/neofetch.sh` is present, executable, and owned by `root`
 - The script is run automatically at login for interactive shells
+- `/etc/neofetch/config.conf` is present and readable by all users
 
 ## Directory Structure
 
@@ -42,7 +44,8 @@ Follows standard Ansible role layout:
 ```
 ansible_role_neofetch/
 ├── files/
-│   └── neofetch.sh
+│   ├── neofetch.sh
+│   └── config.conf
 ├── tasks/
 │   └── main.yml
 └── README.md

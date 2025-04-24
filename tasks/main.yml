@@ -12,4 +12,20 @@
     dest: "/etc/profile.d/neofetch.sh"
     owner: root
     group: root
-    mode: u=rwx,g=rx,o=rx
+    mode: 'u=rwx,g=rx,o=rx'
+
+- name: Ensure /etc/neofetch directory exists
+  ansible.builtin.file:
+    path: /etc/neofetch
+    state: directory
+    owner: root
+    group: root
+    mode: 'u=rwx,g=rx,o=rx'
+
+- name: Deploy global neofetch config
+  ansible.builtin.copy:
+    src: config.conf
+    dest: /etc/neofetch/config.conf
+    owner: root
+    group: root
+    mode: 'u=rw,g=r,o=r'
